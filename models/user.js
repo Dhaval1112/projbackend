@@ -1,6 +1,8 @@
-import mongoose from "mongoose";
-import crypto from "crypto";
-import { v4 as uuidv4 } from "uuid";
+const mongoose = require("mongoose");
+const crypto = require("crypto");
+// const { v4 as uuidv4 } = require("uuid");
+const { v4 } = require("uuid");
+const uuidv4 = v4;
 
 const { Schema } = mongoose;
 
@@ -57,7 +59,7 @@ userSchema
   });
 
 // here we created function which will encrypt user password and store those data in encry_password field
-userSchema.method = {
+userSchema.methods = {
   authanticate: function (plainpassword) {
     return securePassword(plainpassword) === this.encry_password;
   },
