@@ -61,9 +61,8 @@ userSchema
 // here we created function which will encrypt user password and store those data in encry_password field
 userSchema.methods = {
   authanticate: function (plainpassword) {
-    return securePassword(plainpassword) === this.encry_password;
+    return this.securePassword(plainpassword) === this.encry_password;
   },
-
   securePassword: function (plainpassword) {
     if (!plainpassword) return "";
 
