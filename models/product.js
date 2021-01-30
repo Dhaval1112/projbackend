@@ -1,5 +1,7 @@
-import { times } from "lodash";
-import mongoose from "mongoose";
+// import { times } from "lodash";
+const { times } = require * "lodash";
+// import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const { ObjectId } = mongoose.Schema;
 
