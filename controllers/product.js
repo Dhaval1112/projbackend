@@ -9,16 +9,17 @@ const { fromPairs, parseInt, sortBy } = require("lodash");
 exports.getProductById = (req, res, next, id) => {
   Product.findById(id)
     .populate("category")
-    .exec((err, product) => {
-      if (err) {
+    .exec((err, Product) => {
+      if (err || !Product) {
         console.log("error inside product");
         return res.status(400).json({
           error: `Produst by is not available `,
         });
       }
-      req.product = product;
+      // console.log(Product);
+      req.product = Product;
+      next();
     });
-  next();
 };
 
 exports.getProduct = (req, res) => {
@@ -172,7 +173,7 @@ exports.getAllProducts = (req, res) => {
           error: "No product found from DB",
         });
       }
-      res.json({ products });
+      res.json(products);
     });
 };
 

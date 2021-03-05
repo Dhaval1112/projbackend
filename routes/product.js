@@ -51,7 +51,7 @@ router.put(
 );
 
 // List route
-route.get("/products", getAllProducts);
+router.get("/products", getAllProducts);
 
 router.get("/products/categories", getAllUniqueCategories);
 
