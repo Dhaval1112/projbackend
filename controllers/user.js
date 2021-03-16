@@ -58,6 +58,7 @@ exports.userPurchaseList = (req, res) => {
 };
 
 exports.pushOrderInPurchaseList = (req, res, next) => {
+  // console.log("Push in purchase list ");
   let purchases = [];
   req.body.order.products.forEach((product) => {
     purchases.push({

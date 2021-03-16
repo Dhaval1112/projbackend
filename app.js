@@ -13,6 +13,7 @@ const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const stripeRoutes = require("./routes/stripePayment");
+const paymentBRoutes = require("./routes/paymentBRoutes");
 
 // this is only for checking purpose
 const usersRoutes = require("./routes/users");
@@ -43,6 +44,7 @@ app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api", stripeRoutes);
+app.use("/api", paymentBRoutes);
 
 // its just checking purpose route
 app.use("/api", usersRoutes);
