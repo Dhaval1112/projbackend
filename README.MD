@@ -1,1 +1,1 @@
-# this is backend code for mern application
+# this is backend For tshirt store E-commerce
